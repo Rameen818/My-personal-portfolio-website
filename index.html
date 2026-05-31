@@ -1,0 +1,985 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <style>
+    * {
+      font-family: "Times New Roman", Times, serif;
+    }
+    .main {
+      background-color: #111827;
+    }
+    .links {
+      color: #cbd5e1;
+    }
+.lig{
+  color:transparent;
+  background:linear-gradient(to right, rgba(134, 63, 220, 0.865),rgb(255, 255, 255)) ;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+}
+.bg{
+position: relative;
+  min-height: 50vh;
+  overflow: hidden;
+
+}
+    #video {
+    position: absolute;
+     top: 0;
+     left: 0;
+    
+      width: 100%;
+    height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    #game{
+      object-fit: cover;
+      height: 250px;
+      border-radius: 2%;
+      object-position: left;
+    
+    }
+    #theme{
+      height: 250px;
+       border-radius: 2%;
+         object-fit: cover;
+         width: 100%;
+        
+    }
+    .text1 {
+      color: #8b5cf6;
+
+    }
+    .text:hover {
+      color: #8b5cf6;
+    }
+    .text2 {
+      color: #cbd5e1;
+    }
+    .btn {
+      background: #8b5cf6;
+    }
+    .main3 {
+      background: #1e293b;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 50vh;
+    }
+    .heading {
+      color: #8b5cf6;
+    }
+    .main4 {
+      background: #0f172a;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 50vh;
+    }
+    .marquee-container {
+      white-space: nowrap;
+      overflow: hidden;
+      margin-top: 70px;
+      width: 100%;
+    }
+    .marquee-content {
+      display: inline-flex;
+      width: max-content;
+      gap: 20px;
+      align-items: center;
+      justify-items: center;
+
+      animation: move 20s linear infinite;
+    }
+    @keyframes move {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .marquee-content:hover {
+      animation-play-state: paused;
+    }
+    .main5 {
+      background: #1e293b;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 100vh;
+    }
+    
+
+    .card {
+      background: #0f172a ;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+    }
+    .but {
+      padding: 10px;
+      background: #8b5cf6;
+      color: white;
+      border-radius: 10px;
+    }
+    .butt{
+       background: #8b5cf6;
+      color: white;
+      border-radius: 10px;
+    }
+    .main7 {
+      background: #1e293b;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 30vh;
+    }
+   .main8{
+     background: #0f172a;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 50vh;
+   }
+   .box{
+     background: #0f172a ;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+   }
+   .line{
+    line-height:1.8; 
+    letter-spacing:0.5px;
+   }
+  </style>
+  <body>
+    <div class="main sticky top-0 z-20">
+      <div
+        class="grid grid-cols-2 md:grid-cols-2 place-items-center py-3 ms-3 lg:ms-0"
+      >
+        <div>
+          <p class="lig text-lg lg:text-xl px-4 text-shadow-lg 2xl:text-4xl">RAMEEN RAHMAT ALI</p>
+        </div>
+        <div class="links hidden lg:flex gap-3 items-center 2xl:text-3xl 2xl:gap-7">
+          <a href="#main2" class="text hover:underline">Home</a>
+          <a href="#about" class="text hover:underline">About</a>
+          <a href="#skill" class="text hover:underline">Skills</a>
+         
+          <a href="#projects" class="text hover:underline">Projects</a>
+           <a href="#certificate" class="text hover:underline">Certificates</a>
+            <a href="#blog" class="text hover:underline">Blogs</a>
+          <a href="#contact" class="text hover:underline">Contact</a>
+        </div>
+
+        <div>
+          <button
+            onclick="toggle()"
+            class="text text-3xl font-bold text-white lg:hidden"
+          >
+             ≡
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="menu"
+        class="bg-white overflow-hidden fixed top-0 right-0 h-full transition-all duration-500 lg:hidden w-0"
+      >
+        <div class="flex flex-col gap-3 p-3">
+          <button onclick="toggle()" class="text font-bold text-right ">✕</button>
+
+          <a href="#main2" class="text hover:underline">Home</a>
+          <a href="#about" class="text hover:underline">About</a>
+          <a href="#skill" class="text hover:underline">Skills</a>
+         
+          <a href="#projects" class="text hover:underline">Projects</a>
+           <a href="#certificate" class="text hover:underline">Certificates</a>
+            <a href="#blog" class="text hover:underline">Blogs</a>
+          <a href="#contact" class="text hover:underline">Contact</a>
+        </div>
+      </div>
+    </div>
+    <!--grid-->
+
+    <section id="main2" class="bg   " >
+      <div>
+         <video autoplay muted loop id="video">
+        <source src="veedio.mp4" type="video/mp4">
+
+      </video>
+      </div>
+     
+      <div
+        
+        class="main2 bg-black/30  md:flex md:flex-row gap-10   items-center  justify-center px-6 2xl:py-50 2xl:pb-0"
+      >
+       
+        <div class="text-shadow-lg 2xl:text-4xl">
+          <p class="text2 text-lg py-3 2xl:text-4xl">Hi I'm</p>
+          <p class="lig lg:text-4xl  lg:mt-0 text-shadow-lg bg-white/3 backdrop-blur-md rounded-xl w-50 2xl:w-[600px] p-1 lg:w-100 2xl:text-5xl">RAMEEN RAHMAT ALI</p>
+          <p class="text1 lg:text-2xl 2xl:text-5xl lg:mt-4 mt-2 text-shadow-lg bg-white/3 backdrop-blur-md rounded-xl w-70 2xl:w-[550px] p-1">Frontend Web Developer</p>
+
+          <p class="text2 lg:text-lg text-sm mt-2 2xl:text-5xl">
+            I built responsive and modern websites by using HTML, 
+            <p class="text2 lg:text-lg text-sm 2xl:text-4xl"> CSS, Tailwinds
+            CSS, Javascript
+            </p>
+          </p>
+          <a href="CV.pdf">
+          <button
+            class="btn  text-white p-1 md:p-2 2xl:p-5 cursor-pointer rounded-lg  hover:scale-[1.1] tansition-all active:translate-y-2 duration-600 mt-4 shadow-md shadow-purple-900"
+          >
+            Download CV <span class="font-bold text-lg 2xl:text-4xl"> ↡</span>
+          </button>
+          </a>
+        </div>
+         <div class="img ">
+          <img src="heroc.png" class="lg:h-[550px] md:h-[400px] 2xl:h-[900px]  mt-3" alt="">
+        </div>
+      </div>
+      <!--main2-->
+    </section>
+
+    <section
+      id="about"
+      class="main3 md:flex flex-row items-center justify-center gap-10 py-10 px-10 lg:px-64 "
+    >
+      <div >
+        <img src="about.png" class="h-40  md:h-60 md:w-75 2xl:h-100 2xl:w-90 " alt="" />
+      </div>
+
+      <div>
+        <p class="heading text-4xl mt-6 md:mt-0 2xl:text-7xl">ABOUT ME</p>
+        <p class="text2 md:mt-5 mt-3 2xl:text-3xl">
+          I am a passionate Frontend Web Developer skilled in HTML, CSS,JavaScript,
+          Tailwinds CSS, Bootstrap CSS.
+        </p>
+        <p class="text2 2xl:text-3xl">
+          I love creating clean, responsive and user-friendly websites.
+        </p>
+      </div>
+    </section>
+
+    <section id="skill" class="main4">
+      <p class="heading text-center text-4xl py-6 2xl:text-7xl">MY SKILLS</p>
+
+      <div class="marquee-container">
+        <div class="marquee-content mb-10 2xl:mt-20">
+          <span class="text-center"
+            ><img src="html.png" class="h-20" alt="" />
+            <p class="text-white">HTML</p></span
+          >
+          <span class="text-center">
+            <img src="mccs.png" class="h-20" alt="" />
+            <p class="text-white">CSS</p>
+          </span>
+          <span class="text-center">
+            <img src="js.png" class="h-20" alt="" />
+            <p class="text-white">JavaScript</p>
+          </span>
+          <span class="text-center">
+            <img src="tail.png" class="h-20" alt="" />
+            <p class="text-white">Tailwinds CSS</p>
+          </span>
+          <span class="text-center">
+            <img src="bootstrap.png" class="h-20" alt="" />
+            <p class="text-white">Bootstrap</p>
+          </span>
+          <span class="text-center">
+            <img src="git.png" class="h-20" alt="" />
+            <p class="text-white">GitHub</p>
+          </span>
+
+        <span class="text-center"
+            ><img src="html.png" class="h-20" alt="" />
+            <p class="text-white">HTML</p></span
+          >
+          <span class="text-center">
+            <img src="mccs.png" class="h-20" alt="" />
+            <p class="text-white">CSS</p>
+          </span>
+          <span class="text-center">
+            <img src="js.png" class="h-20" alt="" />
+            <p class="text-white">JavaScript</p>
+          </span>
+          <span class="text-center">
+            <img src="tail.png" class="h-20" alt="" />
+            <p class="text-white">Tailwinds CSS</p>
+          </span>
+          <span class="text-center">
+            <img src="bootstrap.png" class="h-20" alt="" />
+            <p class="text-white">Bootstrap</p>
+          </span>
+          <span class="text-center">
+            <img src="git.png" class="h-20" alt="" />
+            <p class="text-white">GitHub</p>
+          </span>
+
+        <span class="text-center"
+            ><img src="html.png" class="h-20" alt="" />
+            <p class="text-white">HTML</p></span
+          >
+          <span class="text-center">
+            <img src="mccs.png" class="h-20" alt="" />
+            <p class="text-white">CSS</p>
+          </span>
+          <span class="text-center">
+            <img src="js.png" class="h-20" alt="" />
+            <p class="text-white">JavaScript</p>
+          </span>
+          <span class="text-center">
+            <img src="tail.png" class="h-20" alt="" />
+            <p class="text-white">Tailwinds CSS</p>
+          </span>
+          <span class="text-center">
+            <img src="bootstrap.png" class="h-20" alt="" />
+            <p class="text-white">Bootstrap</p>
+          </span>
+          <span class="text-center">
+            <img src="git.png" class="h-20" alt="" />
+            <p class="text-white">GitHub</p>
+          </span>
+
+        <span class="text-center"
+            ><img src="html.png" class="h-20" alt="" />
+            <p class="text-white">HTML</p></span
+          >
+          <span class="text-center">
+            <img src="mccs.png" class="h-20" alt="" />
+            <p class="text-white">CSS</p>
+          </span>
+          <span class="text-center">
+            <img src="js.png" class="h-20" alt="" />
+            <p class="text-white">JavaScript</p>
+          </span>
+          <span class="text-center">
+            <img src="tail.png" class="h-20" alt="" />
+            <p class="text-white">Tailwinds CSS</p>
+          </span>
+          <span class="text-center">
+            <img src="bootstrap.png" class="h-20" alt="" />
+            <p class="text-white">Bootstrap</p>
+          </span>
+          <span class="text-center">
+            <img src="git.png" class="h-20" alt="" />
+            <p class="text-white">GitHub</p>
+          </span>
+
+        <span class="text-center"
+            ><img src="html.png" class="h-20" alt="" />
+            <p class="text-white">HTML</p></span
+          >
+          <span class="text-center">
+            <img src="mccs.png" class="h-20" alt="" />
+            <p class="text-white">CSS</p>
+          </span>
+          <span class="text-center">
+            <img src="js.png" class="h-20" alt="" />
+            <p class="text-white">JavaScript</p>
+          </span>
+          <span class="text-center">
+            <img src="tail.png" class="h-20" alt="" />
+            <p class="text-white">Tailwinds CSS</p>
+          </span>
+          <span class="text-center">
+            <img src="bootstrap.png" class="h-20" alt="" />
+            <p class="text-white">Bootstrap</p>
+          </span>
+          <span class="text-center">
+            <img src="git.png" class="h-20" alt="" />
+            <p class="text-white">GitHub</p>
+          </span>
+
+        <span class="text-center"
+            ><img src="html.png" class="h-20" alt="" />
+            <p class="text-white">HTML</p></span
+          >
+          <span class="text-center">
+            <img src="mccs.png" class="h-20" alt="" />
+            <p class="text-white">CSS</p>
+          </span>
+          <span class="text-center">
+            <img src="js.png" class="h-20" alt="" />
+            <p class="text-white">JavaScript</p>
+          </span>
+          <span class="text-center">
+            <img src="tail.png" class="h-20" alt="" />
+            <p class="text-white">Tailwinds CSS</p>
+          </span>
+          <span class="text-center">
+            <img src="bootstrap.png" class="h-20" alt="" />
+            <p class="text-white">Bootstrap</p>
+          </span>
+          <span class="text-center">
+            <img src="git.png" class="h-20" alt="" />
+            <p class="text-white">GitHub</p>
+          </span>
+
+        <span class="text-center"
+            ><img src="html.png" class="h-20" alt="" />
+            <p class="text-white">HTML</p></span
+          >
+          <span class="text-center">
+            <img src="mccs.png" class="h-20" alt="" />
+            <p class="text-white">CSS</p>
+          </span>
+          <span class="text-center">
+            <img src="js.png" class="h-20" alt="" />
+            <p class="text-white">JavaScript</p>
+          </span>
+          <span class="text-center">
+            <img src="tail.png" class="h-20" alt="" />
+            <p class="text-white">Tailwinds CSS</p>
+          </span>
+          <span class="text-center">
+            <img src="bootstrap.png" class="h-20" alt="" />
+            <p class="text-white">Bootstrap</p>
+          </span>
+          <span class="text-center">
+            <img src="git.png" class="h-20" alt="" />
+            <p class="text-white">GitHub</p>
+          </span>
+
+        <span class="text-center"
+            ><img src="html.png" class="h-20" alt="" />
+            <p class="text-white">HTML</p></span
+          >
+          <span class="text-center">
+            <img src="mccs.png" class="h-20" alt="" />
+            <p class="text-white">CSS</p>
+          </span>
+          <span class="text-center">
+            <img src="js.png" class="h-20" alt="" />
+            <p class="text-white">JavaScript</p>
+          </span>
+          <span class="text-center">
+            <img src="tail.png" class="h-20" alt="" />
+            <p class="text-white">Tailwinds CSS</p>
+          </span>
+          <span class="text-center">
+            <img src="bootstrap.png" class="h-20" alt="" />
+            <p class="text-white">Bootstrap</p>
+          </span>
+          <span class="text-center">
+            <img src="git.png" class="h-20" alt="" />
+            <p class="text-white">GitHub</p>
+          </span>
+
+        
+         
+
+          
+
+         
+          
+
+         
+        </div>
+      </div>
+    </section>
+
+   
+
+    <section id="projects" class="main5 py-7">
+      <p class="heading text-center text-4xl py-6 2xl:text-7xl">MY PROJECTS</p>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 place-items-center mt-10 gap-10 md:gap-0"
+      >
+        <div
+          class="card lg:h-[460px] h-[490px] lg:w-[400px] w-[280px] rounded-xl overflow-hidden hover:shadow-md shadow-black"
+        >
+          <div>
+            <img
+              src="haha.png"
+              class="rounded-lg h-[250px]  hover:scale-[1.1] transition-all duration-400"
+              alt=""
+            />
+          </div>
+
+          <div class="py-5 px-3">
+            <p class="text2 text-2xl">Heels E-Commerce Website</p>
+            <p class="text-gray-400">
+              A responsive e-commerce website by using HTML, CSS, JavaScript,
+              Tailwinds CSS.
+            </p>
+            <div class="flex lg:gap-30 gap-10 items-center mt-3">
+              <a
+                href="https://rameen818.github.io/heels-ecommerce-website/"
+                class="but w-30 text-center  hover:scale-[1.1] tansition-all active:translate-y-2 duration-600 shadow-md shadow-purple-900"
+                >Live Demo</a
+              >
+              <a
+                href="https://github.com/Rameen818/heels-ecommerce-website"
+                class="but w-30 text-center  hover:scale-[1.1] tansition-all active:translate-y-2 duration-600 shadow-md shadow-purple-900"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+        <!--card-->
+        <div
+          class="card lg:h-[460px] h-[490px] lg:w-[400px] w-[280px] rounded-xl overflow-hidden hover:shadow-md shadow-black"
+        >
+          <div>
+            <img
+              src="portp.png"
+              class="border-t-2 border-b-gray-300 w-full rounded-lg h-[250px] hover:scale-[1.1] transition-all duration-400"
+              alt=""
+            />
+          </div>
+
+          <div class="py-5 px-3">
+            <p class="text2 text-2xl">A Personal Portfolio Website</p>
+            <p class="text-gray-400">
+              A responsive my personal portfolio website by using HTML, CSS, JavaScript,
+              Tailwinds CSS.
+            </p>
+            <div class="flex lg:gap-30 gap-10 items-center mt-3">
+           
+              <a
+                href="https://rameen818.github.io/heels-ecommerce-website/"
+                class="but w-30 text-center  hover:scale-[1.1] tansition-all active:translate-y-2 duration-600 shadow-md shadow-purple-900"
+                >Live Demo</a
+              >
+              <a
+                href="#main2 "
+                class="but w-30 text-center hover:scale-[1.1] tansition-all active:translate-y-2 duration-600 shadow-md shadow-purple-900"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+        <!--card-->
+         <div
+          class="card lg:h-[460px] h-[490px] lg:w-[400px] w-[280px] rounded-xl overflow-hidden hover:shadow-md mt-8 shadow-black"
+        >
+          <div >
+           <Video autoplay muted loop id="game">
+            <source src="game.mp4" type="video/mp4" >
+
+           </Video>
+          </div>
+
+          <div class="py-5 px-3">
+            <p class="text2 text-2xl">A Mini Dodgeball Game</p>
+            <p class="text-gray-400">
+              A mini game by using HTML, CSS, JavaScript,
+                 and i aslo used animations.
+            </p>
+            <div class="flex lg:gap-30 gap-10 items-center mt-3">
+              
+              <a
+                href=" https://github.com/Rameen818/Dodge-blocks-game-"
+                class="but w-30 text-center  hover:scale-[1.1] tansition-all active:translate-y-2 duration-600 shadow-md shadow-purple-900"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+        <!--card-->
+
+<div
+          class="card lg:h-[460px] h-[490px] lg:w-[400px] w-[280px] rounded-xl overflow-hidden hover:shadow-md shadow-black mt-8"
+        >
+          <div>
+            <img
+              src="todo.png"
+              class="rounded-lg h-[250px] hover:scale-[1.1] transition-all duration-400"
+              alt=""
+            />
+          </div>
+
+          <div class="py-5 px-3">
+            <p class="text2 text-2xl">A To-Do App</p>
+            <p class="text-gray-400">
+              A responsive mini app by using HTML, CSS, JavaScript,
+              Tailwinds CSS.
+            </p>
+            <div class="flex lg:gap-30 gap-10 items-center mt-3">
+              <a
+                href="https://rameen818.github.io/To-Do-List-project-/"
+                class="but w-30 text-center  hover:scale-[1.1] tansition-all active:translate-y-2 duration-600 shadow-md shadow-purple-900"
+                >Live Demo</a
+              >
+              <a
+                href="https://github.com/Rameen818/To-Do-List-project-"
+                class="but w-30 text-center  hover:scale-[1.1] tansition-all active:translate-y-2 duration-600 shadow-md shadow-purple-900"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+        <!--card-->
+
+
+
+        <div
+          class="card lg:h-[460px] h-[490px] lg:w-[400px] w-[280px] rounded-xl overflow-hidden hover:shadow-md shadow-black mt-8"
+        >
+          <div>
+            <img
+              src="food.png"
+              class="rounded-lg h-[250px] hover:scale-[1.1] transition-all duration-400"
+              alt=""
+            />
+          </div>
+
+          <div class="py-5 px-3">
+            <p class="text2 text-2xl">Online Food Delivery Website</p>
+            <p class="text-gray-400">
+              A responsive e-commerce website by using HTML, CSS, Tailwinds CSS.
+            </p>
+            <div class="flex lg:gap-30 gap-10 items-center mt-3">
+              <a
+                href="https://github.com/Rameen818/online-food-delivery-website"
+                class="but w-30 text-center hover:scale-[1.1] tansition-all active:translate-y-2 duration-600 shadow-md shadow-purple-900"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+        <!--card-->
+
+        <div
+          class="card lg:h-[460px] h-[490px] lg:w-[400px] w-[280px] rounded-xl overflow-hidden hover:shadow-md mt-8 shadow-black"
+        >
+          <div>
+            <img
+              src="ouhs.png"
+              class="w-full rounded-lg h-[250px] hover:scale-[1.1] transition-all duration-400"
+              alt=""
+            />
+          </div>
+
+          <div class="py-5 px-3">
+            <p class="text2 text-2xl">Online Property Dealing Website</p>
+            <p class="text-gray-400">
+              A responsive e-commerce website by using HTML, CSS, Bootstrap CSS.
+            </p>
+            <div class="flex lg:gap-30 gap-10 items-center mt-3">
+              <a
+                href=" https://github.com/Rameen818/responsive-bootstrap-navbar"
+                class="but w-30 text-center  hover:scale-[1.1] tansition-all active:translate-y-2 duration-600 shadow-md shadow-purple-900"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+        <!--card-->
+         <div
+          class="card  lg:h-[460px] h-[490px] lg:w-[400px] w-[280px] rounded-xl overflow-hidden hover:shadow-md mt-8 shadow-black"
+        >
+          <div>
+            <img
+              src="cal.png"
+              class="w-full rounded-lg h-[250px] hover:scale-[1.1] transition-all duration-400"
+              alt=""
+            />
+          </div>
+
+          <div class="py-5 px-3">
+            <p class="text2 text-2xl">A Methematic Calculator</p>
+            <p class="text-gray-400">
+              A responsive mini project by using HTML, CSS, JavaScript,
+              Tailswinds CSS.
+            </p>
+            <div class="flex lg:gap-30 gap-10 items-center mt-3">
+            
+              <a
+                href="https://rameen818.github.io/calculator-project/"
+                class="but w-30 text-center  hover:scale-[1.1] tansition-all active:translate-y-2 duration-600 shadow-md shadow-purple-900"
+                >Live Demo</a
+              >
+              <a
+                href=" https://github.com/Rameen818/calculator-project"
+                class="but w-30 text-center  hover:scale-[1.1] tansition-all active:translate-y-2 duration-600 shadow-md shadow-purple-900"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+        <!--card-->
+        <div
+          class="card lg:h-[460px] h-[490px] lg:w-[400px] w-[280px] rounded-xl overflow-hidden hover:shadow-md mt-8 shadow-black"
+        >
+          <div >
+           <Video autoplay muted loop id="theme">
+            <source src="theme.mp4" type="video/mp4" >
+
+           </Video>
+          </div>
+
+          <div class="py-5 px-3">
+            <p class="text2 text-2xl">A Mini Theme project</p>
+            <p class="text-gray-400">
+              A mini theme  by using HTML, CSS, JavaScript,and Tailswinds CSS
+               
+            </p>
+            <div class="flex lg:gap-30 gap-10 items-center mt-3">
+              <a
+                href=" https://github.com/Rameen818/calculator-project"
+                class="but w-30 text-center  hover:scale-[1.1] tansition-all active:translate-y-2 duration-600 shadow-md shadow-purple-900"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+        <!--card-->
+
+       
+
+        
+      </div>
+    </section>
+
+
+    <section id="certificate" class="main8 overflow-hidden p-5">
+<p class="heading text-center text-4xl py-6 2xl:text-7xl">CERTIFICATES</p>
+
+<div class="md:flex gap-30 items-center justify-center mt-10 mb-10">
+   <div id="cert" class="mt-8 lg:mt-0 md:hidden  mb-7">
+              <img src="brohi.png" id="img" class="h-[250px] lg:h-100 lg:m-0 lg:w-[500px] m-auto w-[300px] rounded-lg  hover:scale-[1.1] active:scale-[1.1]" style="display:none; transform: translateX(700px); opacity: 0; transition: all 1s ease-in-out;" alt="">
+                 <img src="coursera.jpg" id="im" class="lg:h-100 h-[250px] rounded-lg lg:w-[500px] m-auto w-[300px] hover:scale-[1.1] active:scale-[1.1]" style="display: none; transform: translateX(700px); opacity: 0; transition: all 1s ease-in-out" alt="">
+                 <img src="digital.jpg"  id="imm" class="lg:h-100 h-[250px]  lg:m-0 lg:w-[500px] m-auto w-[300px]  rounded-lg hover:scale-[1.1] active:scale-[1.1]" style="display:none ; transform: translateX(700px); opacity: 0; transition: all 1s ease-in-out"  alt="">
+             </div><!--img-->
+             <div >
+              <p class="heading lg:text-xl 2xl:text-5xl"><span class="font-bold  2xl:text-5xl">→</span> Frontend Web Development Certificate</p>
+              <p class="text2 text-sm  2xl:text-3xl"><span class="heading">●</span>  Issused by Rohi eSkill Learning Hub Office, Bahawalpur</p>
+              <p class="text2 text-sm  2xl:text-3xl"><span class="heading ">●</span>  Completed in 2026</p>
+              <a href="#certificate">
+              <button onclick="show()" class="butt lg:p-2 p-1.5  mt-2 hover:scale-[1.1] transition-all duration-600 shadow-md shadow-purple-900 cursor-pointer active:translate-y-2  2xl:text-3xl">View Certificate <span class="text-sm  2xl:text-2xl">→</span> </button></a>
+
+               <p class="heading mt-5 lg:text-xl text-sm  2xl:text-5xl"><span class="font-bold ">→</span>   Web Development Certificate</p>
+               <p class="text2 text-sm  2xl:text-3xl"><span class="heading">●</span> Learning Basic Wordpress, Online Trianing</p>
+              <p class="text2 text-sm  2xl:text-3xl"><span class="heading">●</span> Issused by Coursera</p>
+              <p class="text2 text-sm  2xl:text-3xl"> <span class="heading">●</span> Completed in 2025</p>
+               <a href="#certificate">
+              <button onclick="showw()" class="butt lg:p-2 p-1.5 mt-2 hover:scale-[1.1] transition-all duration-600 shadow-md shadow-purple-900 cursor-pointer active:translate-y-2  2xl:text-3xl">View Certificate <span class="text-sm  2xl:text-2xl">→</span> </button>
+</a>
+               <p class="heading mt-5 lg:text-xl  2xl:text-5xl"><span class="font-bold ">→</span>  Digital Literacy Certificate </p>
+
+              <p class="text2 text-sm  2xl:text-3xl"><span class="heading">●</span> Issused by Circle Women Association Digital Literacy program Bahawalpur</p>
+              <p class="text2 text-sm 2xl:text-3xl"><span class="heading">●</span> Learned Canva Designing, and how to create professional profiles </p>
+              <p class="text2 text-sm 2xl:text-3xl"><span class="heading">●</span> Completed in 2022</p>
+               <a href="#certificate">
+              <button onclick="showww()" class="butt lg:p-2 p-1.5 mt-2 hover:scale-[1.1] transition-all duration-600 shadow-md shadow-purple-900 2xl:text-3xl cursor-pointer active:translate-y-2">View Certificate <span class="text-sm 2xl:text-2xl">→</span> </button></a>
+
+             </div> <!--text-->
+
+             <div id="cert" class="mt-10 lg:mt-0  hidden md:block">
+              <img src="brohi.png" id="rohi" class="h-[250px] md:h-100 2xl:h-[600px] lg:m-0 md:w-[500px] m-auto w-[300px] 2xl:w-[800px] rounded-lg  hover:scale-[1.1] active:scale-[1.1]" style="display:none; transform: translateX(700px); opacity: 0; transition: all 1s ease-in-out;" alt="">
+                 <img src="coursera.jpg" id="corsera" class="md:h-100 h-[250px] 2xl:h-[600px] rounded-lg md:w-[500px] 2xl:w-[800px] m-auto w-[300px] hover:scale-[1.1] active:scale-[1.1]" style="display: none; transform: translateX(700px); opacity: 0; transition: all 1s ease-in-out" alt="">
+                 <img src="digital.jpg"  id="digital" class="md:h-100 h-[250px] 2xl:h-[600px] 2xl:w-[800px] lg:m-0 md:w-[500px] m-auto w-[300px]  rounded-lg hover:scale-[1.1] active:scale-[1.1]" style="display:none ; transform: translateX(700px); opacity: 0; transition: all 1s ease-in-out"  alt="">
+             </div><!--img-->
+
+
+
+  
+</div> <!--flex-->
+
+    </section>
+
+<section id="blog" class="main7">
+  <p class="heading text-center text-4xl py-6 2xl:text-7xl">BLOGS</p>
+<div class="text-center m-auto max-w-[700px]  pb-10 p-2">
+<p class="heading lg:text-2xl text-md text-center md:text-lg 2xl:text-3xl">The Trick Behind Responsive Image & Text Left-Right In Card</p>
+
+<div>
+  <img src="card.png" id="image" class="h-[300px] lg:w-full w-[300px] m-auto rounded-lg mt-6" alt="">
+  
+  <div class="flex gap-10 items-center justify-center mt-2 ">
+    <button onclick="pre()" class="heading font-bold text-3xl cursor-pointer 2xl:text-6xl"> ← </button>
+  <button onclick="next()" class="heading font-bold text-3xl cursor-pointer 2xl:text-6xl">  →  </button>
+  </div>
+</div>
+<div class="line">
+  <p id="aread" class="text2 mt-4  text-center 2xl:text-3xl">At the first, I was also confused about how to make image & text cards responsive and how to adjust image . After practicing, I understood the real trick......</p>
+  <p id="read" class="text2 text-center 2xl:text-3xl " style="display: none; "> First, give the cards <span class="font-bold underline"> fixed height and width in pixels</span> for desktop,but on the small screen <span class="font-bold underline"> decrease the width</span> and adjust the height according to the content length, then use <span class="font-bold underline">overflow:hidden</span> to hide unneccessary content, then use <span class="font-bold underline">flex</span> just on desktop and medium screen and on small screen adjust content in column, to adjust the image: give the <span class="font-bold underline"> full width </span> to the image on all screens ,and give full height just on the large screen but reduce the height of image on small screen and then use <span class="font-bold underline">object-fit:cover ; </span>  to cover the image but it may crop it but by using the <span class="font-bold underline">object-position</span> you can show the aspect of the image that you wants. Just by using these techniques , you can make cards responsive easily.  </p>
+
+  <div class="justify-center flex items-center">
+   
+    <button onclick="more()" id="ram" class="butt p-1  2xl:text-3xl 2xl:mt-3 2xl:p-4 hover:scale-[1.1] transition-all duration-600 shadow-md shadow-purple-900 cursor-pointer active:translate-y-2 ">Read More   </button>
+  <button onclick="less()" id="rem" class="butt p-1 hover:scale-[1.1] transition-all duration-600 shadow-md shadow-purple-900 cursor-pointer active:translate-y-2  2xl:text-3xl 2xl:mt-3 2xl:p-4 " style="display: none;">Read Less</button>
+
+  </div>
+     
+
+
+</div>
+</div>
+</section>
+
+    <section id="contact" class="main">
+      <p class="heading text-center text-4xl py-6  2xl:text-7xl ">CONTACT ME</p>
+
+      <div class="lg:flex gap-20 2xl:gap-60 items-center justify-center mt-6 2xl:mt-10 px-6 lg:px-0  2xl:text-3xl ">
+        <div class="flex gap-3 lg:gap-0 lg:flex-col items-center">
+          <img src="mli.png" class="h-7 2xl:h-16 lg:m-auto" alt="" />
+          <p class="text-white lg:mt-2 hover:underline cursor-pointer">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rameenrehamatali@gmail.com">
+            rameenrehamatali@gmail.com
+          </p>
+          </a>
+        </div>
+        <div class="flex gap-3 lg:gap-0 lg:flex-col items-center mt-2 lg:mt-0  2xl:text-3xl">
+          <img src="call.png" class="h-8 2xl:h-18 lg:m-auto" alt="" />
+          <p class="text-white lg:mt-2 hover:underline cursor-pointer">
+            <a href="tel:+923704903885" class="">
+          03704903885
+          </p>
+          </a>
+        </div>
+
+        <div class="flex gap-3 lg:gap-0 lg:flex-col items-center mt-2 lg:mt-0">
+          <img src="li.png" class="h-8 lg:m-auto 2xl:h-17 " alt="" />
+          <a
+            href="https://www.linkedin.com/in/rameen-rahmat-2090693a0?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+            class="text-white lg:mt-1 hover:underline cursor-pointer"
+            >linkedin.com/in/rameem-rahamat</a
+          >
+        </div>
+
+        <div class="flex gap-3 lg:gap-0 lg:flex-col items-center mt-2 lg:mt-0">
+          <img src="github.png" class="h-9 lg:m-auto 2xl:h-18 lg:mb-1" alt="" />
+          <a
+            href="https://github.com/Rameen818"
+            class="text-white hover:underline cursor-pointer"
+            >github.com/Rameen818
+          </a>
+        </div>
+      </div>
+
+      <div class="border-b-2 border-gray-600 mt-9"></div>
+    </section>
+
+    <section class="main h-20 py-5 text-center text-sm md:text-lg  2xl:text-3xl ">
+      <p class="text2">© 2026 Rameen Rahmat Ali | All Rights Reserved</p>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+      function toggle() {
+        let menu = document.getElementById("menu");
+        if (menu.style.width === "150px") {
+          menu.style.width = "0";
+        } else {
+          menu.style.width = "150px";
+        }
+      }
+
+
+    let img = document.getElementById("img")
+    let im=document.getElementById("im")
+    let imm=document.getElementById("imm")
+         let rohi = document.getElementById("rohi")
+    let cor=document.getElementById("corsera")
+    let dig=document.getElementById("digital")
+    function show(){
+      img.style.display="block";
+      im.style.display="none";
+      imm.style.display="none";
+     rohi.style.display="block";
+      cor.style.display="none";
+      dig.style.display="none";
+
+      setTimeout(function(){
+        img.style.transform="translateX(0)"
+        img.style.opacity="1"
+          rohi.style.transform="translateX(0)"
+      rohi.style.opacity="1"
+
+      }, 10)
+    }
+    function showw(){
+ im.style.display="block"
+ img.style.display="none";
+ imm.style.display="none";
+ rohi.style.display="none";
+      cor.style.display="block";
+      dig.style.display="none";
+
+  setTimeout(function(){
+        im.style.transform="translateX(0)"
+        im.style.opacity="1"
+         cor.style.transform="translateX(0)"
+        cor.style.opacity="1"
+      }, 10)
+    }
+    
+     function showww(){
+ im.style.display="none"
+ img.style.display="none";
+ imm.style.display="block"
+  rohi.style.display="none";
+      cor.style.display="none";
+      dig.style.display="block";
+
+  setTimeout(function(){
+        imm.style.transform="translateX(0)"
+        imm.style.opacity="1"
+         dig.style.transform="translateX(0)"
+        dig.style.opacity="1"
+      }, 10)
+    
+    }
+
+
+    let image=["card.png", "acard.png", "bcard.png"]
+    let index=0;
+    function pre(){
+      index--;
+      if(index < 0){
+      index=image.length-1;
+      }
+      change()
+    }
+    function next(){
+      index++
+      if(index >= image.length){
+      index=0
+      }
+      change()
+    }
+    function change(){
+  document.getElementById("image").src=image[index]
+    }
+
+    let read=document.getElementById("read")
+    let ram=document.getElementById("ram")
+    let rem=document.getElementById("rem")
+    function more(){
+      read.style.display="block"
+ram.style.display="none"
+rem.style.display="block"
+
+    }
+    function less(){
+       read.style.display="none"
+ram.style.display="block"
+rem.style.display="none"
+
+    }
+    
+    </script>
+  </body>
+</html>
